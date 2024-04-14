@@ -4,8 +4,8 @@ import css from './App.module.css';
 import Header from './Header/Header';
 
 import { PATHS } from 'properties/Constants';
-import Home from './Home/Home';
-import Catalog from './Catalog/Catalog';
+import Home from 'pages/Home';
+import Catalog from 'pages/Catalog';
 
 function App() {
   return (

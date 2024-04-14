@@ -13,9 +13,32 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  text-decoration: none;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
 }
+
+ul,
+ol {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* a {
+  text-decoration: none;
+} */
 /* a:hover {
   color: #535bf2;
 } */
@@ -23,15 +46,15 @@ a {
 body {
   margin: 0;
   /* display: flex; */
-  place-items: start;
-  min-width: 320px;
+  /* place-items: start; */
+  /* min-width: 320px; */
   min-height: 100vh;
 }
 
-h1 {
+/* h1 {
   font-size: 3.2em;
   line-height: 1.1;
-}
+} */
 /* 
 button {
   border-radius: 8px;

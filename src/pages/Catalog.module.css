@@ -1,0 +1,9 @@
+.container {
+  border: 1px solid tomato;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  column-gap: 64px;
+  margin: 100px 64px;
+}

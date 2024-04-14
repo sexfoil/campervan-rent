@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { findAll } from 'api/AdvertsApi';
+import CamperSearchForm from 'components/Search/CamperSearchForm/CamperSearchForm';
+import InfoBlock from 'components/InfoBlock/InfoBlock';
 import css from './Catalog.module.css';
-import CamperInfoList from 'components/Camper/CamperInfoList/CamperInfoList';
 
 export const Catalog = () => {
   const [campers, setCampers] = useState([]);
@@ -18,14 +19,11 @@ export const Catalog = () => {
 
   return (
     <div className={css.container}>
-      <h3>Trending movies:</h3>
-      {/* {loading && <Loader />} */}
+      <CamperSearchForm />
       {loading && <div>Loading...</div>}
       {/* {errorMessage && <ErrorMessage message={errorMessage} />} */}
-
       {errorMessage}
-      {console.log(campers)}
-      {campers.length !== 0 && <CamperInfoList campers={campers} />}
+      {campers.length !== 0 && <InfoBlock campers={campers} />}
     </div>
   );
 };

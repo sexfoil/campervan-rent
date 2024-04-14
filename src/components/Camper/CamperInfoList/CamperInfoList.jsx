@@ -1,9 +1,11 @@
+import Button from 'components/Button/Button';
 import CamperInfoCard from '../CamperInfoCard/CamperInfoCard';
+import css from './CamperInfoList.module.css';
 
 const CamperInfoList = ({ campers }) => {
-  return campers && campers.length !== 0 ? (
-    <div>
-      <ul>
+  return campers.length !== 0 ? (
+    <div className={css.container}>
+      <ul className={css.list}>
         {campers.map(camper => {
           return (
             <li key={camper._id}>
@@ -12,6 +14,7 @@ const CamperInfoList = ({ campers }) => {
           );
         })}
       </ul>
+      <Button />
     </div>
   ) : (
     <p>There is no camper to show.</p>
