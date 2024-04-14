@@ -1,11 +1,11 @@
 import axios from 'axios';
-import { PATH } from 'properties/Constants';
+import { PATHS } from 'properties/Constants';
 
-axios.defaults.baseURL = PATH.baseUrl;
+axios.defaults.baseURL = PATHS.baseUrl;
 
 export const findAll = async () => {
-  const data = await axios.get(PATH.advert);
-  return data;
+  const response = await axios.get(PATHS.advert);
+  return response.data;
 };
 
 // export const save = async contact => {

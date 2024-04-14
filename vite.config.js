@@ -9,6 +9,7 @@ export default defineConfig({
     alias: {
       properties: ['/src/properties'],
       components: ['/src/components'],
+      api: ['/src/api'],
     },
   },
 });

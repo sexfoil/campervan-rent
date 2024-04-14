@@ -5,6 +5,7 @@ import Header from './Header/Header';
 
 import { PATHS } from 'properties/Constants';
 import Home from './Home/Home';
+import Catalog from './Catalog/Catalog';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <Routes>
           <Route path={PATHS.home} element={<Header />}>
             <Route index element={<Home />} />
-            <Route path={PATHS.catalog} element={<div>CATALOG</div>} />
+            <Route path={PATHS.catalog} element={<Catalog />} />
             <Route path={PATHS.favorites} element={<div>FAVORITES</div>}>
               <Route path="one" element={<div>ONE</div>} />
               <Route path="two" element={<div>TWO</div>} />
