@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { PATH } from 'properties/Api';
+import { PATH } from 'properties/Constants';
 
 axios.defaults.baseURL = PATH.baseUrl;
 

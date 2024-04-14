@@ -3,20 +3,23 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import css from './App.module.css';
 import Header from './Header/Header';
 
+import { PATHS } from 'properties/Constants';
+import Home from './Home/Home';
+
 function App() {
   return (
     <>
       <div className={css.container}>
         <Routes>
-          <Route path="/" element={<Header />}>
-            <Route index element={<div>HOME</div>} />
-            <Route path="catalog" element={<div>CATALOG</div>} />
-            <Route path="favorites" element={<div>FAVORITES</div>}>
+          <Route path={PATHS.home} element={<Header />}>
+            <Route index element={<Home />} />
+            <Route path={PATHS.catalog} element={<div>CATALOG</div>} />
+            <Route path={PATHS.favorites} element={<div>FAVORITES</div>}>
               <Route path="one" element={<div>ONE</div>} />
               <Route path="two" element={<div>TWO</div>} />
             </Route>
           </Route>
-          <Route path="*" element={<Navigate to="/" />} />
+          <Route path="*" element={<Navigate to={PATHS.home} />} />
         </Routes>
       </div>
     </>
