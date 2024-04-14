@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { findAll } from 'api/AdvertsApi';
 import css from './Catalog.module.css';
-import { CamperInfoList } from 'components/Camper/CampersInfoList/CampersInfoList';
+import CamperInfoList from 'components/Camper/CamperInfoList/CamperInfoList';
 
 export const Catalog = () => {
   const [campers, setCampers] = useState([]);
