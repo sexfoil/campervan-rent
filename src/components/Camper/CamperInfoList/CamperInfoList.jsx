@@ -7,11 +7,7 @@ const CamperInfoList = ({ campers }) => {
     <div className={css.container}>
       <ul className={css.list}>
         {campers.map(camper => {
-          return (
-            <li key={camper._id}>
-              <CamperInfoCard camper={camper} />
-            </li>
-          );
+          return <CamperInfoCard key={camper._id} {...camper} />;
         })}
       </ul>
       <Button />
