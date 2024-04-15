@@ -6,6 +6,7 @@
   background-color: #e44848;
   border-radius: 200px;
   padding: 16px 40px;
+  cursor: pointer;
 }
 
 .submit {

@@ -1,3 +1,4 @@
+import { NAMES } from 'properties/Constants';
 import CamperFeatureItem from '../CamperFeatureItem/CamperFeatureItem';
 import css from './CamperFeatureList.module.css';
 
@@ -10,8 +11,8 @@ const CamperFeatureList = ({ details }) => {
           return (
             <CamperFeatureItem
               key={name}
-              logo={'[' + name + ']'}
-              description={details[name] + ' ' + name}
+              logo={'[=]'}
+              description={NAMES.FEATURES[name]}
             />
           );
         })}
