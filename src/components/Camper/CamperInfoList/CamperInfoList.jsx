@@ -1,6 +1,8 @@
-import Button from 'components/Button/Button';
 import CamperInfoCard from '../CamperInfoCard/CamperInfoCard';
+
 import css from './CamperInfoList.module.css';
+import { NAMES } from 'properties/Constants';
+import LoadMoreButton from 'components/Button/LoadMoreButton';
 
 const CamperInfoList = ({ campers }) => {
   return campers.length !== 0 ? (
@@ -10,7 +12,7 @@ const CamperInfoList = ({ campers }) => {
           return <CamperInfoCard key={camper._id} {...camper} />;
         })}
       </ul>
-      <Button />
+      <LoadMoreButton name={NAMES.BUTTONS.loadMore} />
     </div>
   ) : (
     <p>There is no camper to show.</p>

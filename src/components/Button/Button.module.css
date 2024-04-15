@@ -1,0 +1,32 @@
+.button {
+  max-width: 173px;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  background-color: #e44848;
+  border-radius: 200px;
+  padding: 16px 40px;
+}
+
+.submit {
+  padding: 16px 60px;
+}
+
+.loadMore {
+  color: #101828;
+  background-color: #ffffff;
+  border: 1px solid #47546720;
+  padding: 16px 32px;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #d84343;
+}
+
+.loadMore:hover,
+.loadMore:focus {
+  color: #101828;
+  background-color: #ffffff;
+  border: 1px solid #e44848;
+}

@@ -11,3 +11,12 @@ export const PATHS = {
   catalog: '/catalog',
   favorites: '/favorits',
 };
+
+export const NAMES = {
+  BUTTONS: {
+    search: 'Search',
+    send: 'Send',
+    showMore: 'Show more',
+    loadMore: 'Load more',
+  },
+};

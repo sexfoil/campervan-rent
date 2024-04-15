@@ -2,17 +2,18 @@ import CamperDetailsHeader from 'components/Camper/CamperDetailsHeader/CamperDet
 import CamperImage from '../CamperImage/CamperImage';
 import css from './CamperInfoCard.module.css';
 import CamperFeatureList from '../CamperFeatureList/CamperFeatureList';
-import Button from 'components/Button/Button';
+import Button from 'components/Button/SubmitButton';
+import { NAMES } from 'properties/Constants';
 
-const CamperInfoCard = ({ gallery, name, details }) => {
+const CamperInfoCard = ({ gallery, name, description, details }) => {
   return (
     <li className={css.container}>
       <CamperImage url={gallery[0]} alt={name} />
       <div className={css.infoblock}>
         <CamperDetailsHeader />
-        <p className={css.description}>Description</p>
+        <p className={css.description}>{description}</p>
         <CamperFeatureList details={details} />
-        <Button />
+        <Button name={NAMES.BUTTONS.showMore} />
       </div>
     </li>
   );
