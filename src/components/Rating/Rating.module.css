@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  column-gap: 4px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.svgBox {
+  width: 16px;
+  height: 16px;
+  color: #ffc531;
+  fill: #ffc531;
+  display: flex;
+  align-items: center;
+}
