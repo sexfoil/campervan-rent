@@ -1,0 +1,11 @@
+.container {
+  color: #101828;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.group {
+  border: 1px solid teal;
+  font-size: 16px;
+  font-weight: 400;
+}

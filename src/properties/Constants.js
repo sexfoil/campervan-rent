@@ -39,4 +39,8 @@ export const NAMES = {
     engine: 'petrol',
     transmission: 'automatic',
   },
+  CURRENCY: {
+    euro: '€',
+    usd: '$',
+  },
 };
