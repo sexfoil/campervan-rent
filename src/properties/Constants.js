@@ -43,4 +43,14 @@ export const NAMES = {
     euro: '€',
     usd: '$',
   },
+  LABELS: {
+    location: 'Location',
+    filters: 'Filters',
+    features: 'Features',
+    reviews: 'Reviews',
+    name: 'Name',
+    email: 'Email',
+    bookingDate: 'Booking date',
+    comment: 'Comment',
+  },
 };

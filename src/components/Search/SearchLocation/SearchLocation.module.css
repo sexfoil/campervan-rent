@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  align-items: flex-start;
+  border: 1px solid tomato;
+  width: 100%;
+}
+
+.label {
+  color: #10182860;
+  font-size: 16px;
+  font-weight: 500;
+  width: 100%;
+}
+
+.inputBox {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  column-gap: 8px;
+  align-items: center;
+  width: 100%;
+  color: #10182860;
+  /* background-color: #f1bbbb; */
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  padding: 18px 0;
+}
+
+.svgBox {
+  position: absolute;
+  left: 18px;
+  width: 18px;
+  height: 20px;
+  fill: none;
+  stroke: #10182860;
+  padding-top: 4px;
+  /* margin-left: 18px; */
+}
+
+.input {
+  font-size: 16px;
+  font-weight: 400;
+  background-color: inherit;
+  border: none;
+  width: 100%;
+  margin-right: 18px;
+  text-indent: 44px;
+}
+
+/* .input:focus {
+  border: none;
+  color: #101828;
+} */
+
+.input:focus + .svgBox {
+  stroke: #101828;
+}

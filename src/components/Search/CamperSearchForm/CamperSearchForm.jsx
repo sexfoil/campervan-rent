@@ -7,9 +7,11 @@ import { NAMES } from 'properties/Constants';
 const CamperSearchForm = () => {
   return (
     <div className={css.container}>
-      <SearchLocation />
-      <SearchFilterPanel />
-      <SubmitButton name={NAMES.BUTTONS.search} />
+      <form className={css.form}>
+        <SearchLocation />
+        <SearchFilterPanel />
+        <SubmitButton name={NAMES.BUTTONS.search} />
+      </form>
     </div>
   );
 };

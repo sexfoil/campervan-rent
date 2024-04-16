@@ -6,4 +6,5 @@
   align-items: flex-start;
   column-gap: 64px;
   margin: 100px 64px;
+  /* width: 100%; */
 }

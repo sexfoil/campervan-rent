@@ -44,6 +44,10 @@ a {
   color: #535bf2;
 } */
 
+*:focus {
+  outline: transparent;
+}
+
 body {
   margin: 0;
   /* display: flex; */
