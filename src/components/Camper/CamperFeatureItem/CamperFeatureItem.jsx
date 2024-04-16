@@ -1,9 +1,13 @@
+import SvgIcon from 'components/SvgIcon/SvgIcon';
 import css from './CamperFeatureItem.module.css';
 
-const CamperFeatureItem = ({ logo, description }) => {
+const CamperFeatureItem = ({ icon, value, description }) => {
   return (
     <li className={css.container}>
-      <span>{logo}</span> <span>{description}</span>
+      <SvgIcon icon={icon} />
+      <span>
+        {value}&nbsp;{description}
+      </span>
     </li>
   );
 };

@@ -8,10 +8,14 @@ const CamperFeatureList = ({ details }) => {
       {Object.keys(details)
         .filter(name => details[name])
         .map(name => {
+          const detail = details[name];
+          const detailValue =
+            detail && typeof detail === 'number' && detail > 1 ? detail : '';
           return (
             <CamperFeatureItem
               key={name}
-              logo={'[=]'}
+              icon={name}
+              value={detailValue}
               description={NAMES.FEATURES[name]}
             />
           );
