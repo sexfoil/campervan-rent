@@ -9,15 +9,16 @@ const CamperSearchForm = () => {
     <div className={css.container}>
       <form className={css.form}>
         <SearchLocation />
-
+        <p className={css.group}>{NAMES.LABELS.filters}</p>
         <SearchFilterPanel
-          filterGroupName={NAMES.FILTERS.equipment}
+          filterGroupName={NAMES.FILTER_GROUPS.equipment}
           filters={['TV', 'CD', 'transmission', 'petrol', 'water']}
         />
         <SearchFilterPanel
-          filterGroupName={NAMES.FILTERS.type}
-          filters={['van', 'fully', 'alcove']}
+          filterGroupName={NAMES.FILTER_GROUPS.type}
+          filters={Object.keys(NAMES.CAMPER_TYPES)}
         />
+        <span className={css.gap}></span>
         <SubmitButton name={NAMES.BUTTONS.search} />
       </form>
     </div>

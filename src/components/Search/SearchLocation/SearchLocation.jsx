@@ -5,7 +5,7 @@ import SvgIcon from 'components/SvgIcon/SvgIcon';
 const SearchLocation = () => {
   return (
     <div className={css.container}>
-      <div className={css.label}>{NAMES.LABELS.location}</div>
+      <p className={css.label}>{NAMES.LABELS.location}</p>
       <div className={css.inputBox}>
         <input
           className={css.input}
@@ -13,7 +13,6 @@ const SearchLocation = () => {
           name="location"
           type="input"
           autoComplete="off"
-          autoFocus
           placeholder="City"
         />
         <div className={css.svgBox}>

@@ -53,8 +53,13 @@ export const NAMES = {
     bookingDate: 'Booking date',
     comment: 'Comment',
   },
-  FILTERS: {
+  FILTER_GROUPS: {
     equipment: 'Vehicle equipment',
     type: 'Vehicle type',
+  },
+  CAMPER_TYPES: {
+    van: 'Van',
+    fully: 'Fully Integrated',
+    alcove: 'Alcove',
   },
 };

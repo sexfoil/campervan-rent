@@ -3,6 +3,7 @@
   flex-direction: column;
   row-gap: 24px;
   width: 100%;
+  margin-bottom: 32px;
 }
 
 .name {

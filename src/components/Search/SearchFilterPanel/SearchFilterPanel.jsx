@@ -1,3 +1,4 @@
+// import { NAMES } from 'properties/Constants';
 import SearchFilterItem from '../SearchFilterItem/SearchFilterItem';
 import css from './SearchFilterPanel.module.css';
 
