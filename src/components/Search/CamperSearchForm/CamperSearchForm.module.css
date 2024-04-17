@@ -1,5 +1,4 @@
 .container {
-  border: 1px solid blueviolet;
   flex-grow: 2;
   max-width: 33%;
 }

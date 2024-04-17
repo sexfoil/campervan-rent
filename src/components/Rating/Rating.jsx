@@ -7,7 +7,7 @@ const Raiting = ({ rating, reviews }) => {
       <div className={css.svgBox}>
         <SvgIcon icon={'star'} />
       </div>
-      <p>{`${rating}(${reviews} Reviews)`}</p>
+      <p className={css.text}>{`${rating}(${reviews} Reviews)`}</p>
     </div>
   );
 };

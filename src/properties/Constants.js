@@ -53,4 +53,8 @@ export const NAMES = {
     bookingDate: 'Booking date',
     comment: 'Comment',
   },
+  FILTERS: {
+    equipment: 'Vehicle equipment',
+    type: 'Vehicle type',
+  },
 };

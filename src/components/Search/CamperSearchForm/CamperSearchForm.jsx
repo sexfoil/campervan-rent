@@ -9,7 +9,15 @@ const CamperSearchForm = () => {
     <div className={css.container}>
       <form className={css.form}>
         <SearchLocation />
-        <SearchFilterPanel />
+
+        <SearchFilterPanel
+          filterGroupName={NAMES.FILTERS.equipment}
+          filters={['TV', 'CD', 'transmission', 'petrol', 'water']}
+        />
+        <SearchFilterPanel
+          filterGroupName={NAMES.FILTERS.type}
+          filters={['van', 'fully', 'alcove']}
+        />
         <SubmitButton name={NAMES.BUTTONS.search} />
       </form>
     </div>

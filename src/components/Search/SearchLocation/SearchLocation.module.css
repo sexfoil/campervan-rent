@@ -3,7 +3,6 @@
   flex-direction: column;
   row-gap: 8px;
   align-items: flex-start;
-  border: 1px solid tomato;
   width: 100%;
 }
 
@@ -22,7 +21,6 @@
   align-items: center;
   width: 100%;
   color: #10182860;
-  /* background-color: #f1bbbb; */
   background-color: #f7f7f7;
   border-radius: 10px;
   padding: 18px 0;
@@ -36,7 +34,6 @@
   fill: none;
   stroke: #10182860;
   padding-top: 4px;
-  /* margin-left: 18px; */
 }
 
 .input {
@@ -49,10 +46,10 @@
   text-indent: 44px;
 }
 
-/* .input:focus {
+.input:focus {
   border: none;
   color: #101828;
-} */
+}
 
 .input:focus + .svgBox {
   stroke: #101828;
