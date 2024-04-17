@@ -1,5 +1,6 @@
 {
   "name": "campervan-rent",
+  "homepage": "<github url>",
   "private": true,
   "version": "0.0.0",
   "type": "module",
