@@ -5,7 +5,7 @@ axios.defaults.baseURL = PATHS.baseUrl;
 
 export const findAll = async () => {
   const response = await axios.get(PATHS.advert);
-  return response.data;
+  return response;
 };
 
 // export const save = async contact => {
