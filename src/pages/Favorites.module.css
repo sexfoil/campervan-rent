@@ -1,0 +1,28 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  /* column-gap: 32px; */
+  justify-content: space-around;
+  align-items: flex-start;
+  margin: 32px auto;
+}
+
+.scroll {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  fill: #475467;
+  stroke: #475467;
+  stroke-width: 0;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

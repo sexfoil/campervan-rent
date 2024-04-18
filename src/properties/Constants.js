@@ -1,7 +1,7 @@
 export const PAGES = {
   home: 'Home',
   catalog: 'Catalog',
-  favorites: 'Favorits',
+  favorites: 'Favorites',
 };
 
 export const PATHS = {
@@ -9,7 +9,7 @@ export const PATHS = {
   advert: '/advert',
   home: '/',
   catalog: '/catalog',
-  favorites: '/favorits',
+  favorites: '/favorites',
 };
 
 export const NAMES = {
