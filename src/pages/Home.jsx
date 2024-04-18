@@ -4,14 +4,17 @@ import background from 'img/banner.avif';
 const Home = () => {
   return (
     <div className={css.container}>
-      <div>
+      <div className={css.title}>
         <h1>CAMPERVAN RENT</h1>
         <p>
           Explore the country at your own pace and in complete comfort with an
-          RV rental from Cruise America
+          Campervan Rent from Cruise America
         </p>
       </div>
-      <img className={css.image} src={background} alt="bacground" />
+      <img className={css.image} src={background} alt="background" />
+      <p className={css.author}>
+        &copy; Test project GoIT course, developed by Viacheslav Poliakov
+      </p>
     </div>
   );
 };
