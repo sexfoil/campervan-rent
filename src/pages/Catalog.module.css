@@ -8,3 +8,11 @@
   margin: 100px 64px;
   /* width: 100%; */
 }
+
+.campers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 5;
+  width: 64%;
+}

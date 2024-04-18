@@ -6,7 +6,7 @@ export const useScrollPosition = () => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 100) {
+        if (window.scrollY > 100) {
           setScrollPos(true);
         } else {
           setScrollPos(false);

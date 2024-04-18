@@ -3,6 +3,7 @@ import css from './Favorites.module.css';
 import { findAll } from 'api/AdvertsApi';
 import InfoBlock from 'components/InfoBlock/InfoBlock';
 import SvgIcon from 'components/SvgIcon/SvgIcon';
+import Loader from 'components/Loader/Loader';
 
 const Favorites = () => {
   const [campers, setCampers] = useState([]);
@@ -24,10 +25,10 @@ const Favorites = () => {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      const position = window.pageYOffset;
+      const position = window.scrollY;
 
       // Button is displayed after scrolling for 500 pixels
-      if (position > 200) {
+      if (position > 100) {
         setScrollUpVisible(true);
       } else {
         setScrollUpVisible(false);
@@ -43,7 +44,7 @@ const Favorites = () => {
 
   return (
     <div className={css.container}>
-      {loading && <div>Loading...</div>}
+      {loading && <Loader />}
       {/* {errorMessage && <ErrorMessage message={errorMessage} />} */}
       {errorMessage}
       {campers.length !== 0 && <InfoBlock campers={campers} />}

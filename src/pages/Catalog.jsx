@@ -3,6 +3,7 @@ import { findAll } from 'api/AdvertsApi';
 import CamperSearchForm from 'components/Search/CamperSearchForm/CamperSearchForm';
 import InfoBlock from 'components/InfoBlock/InfoBlock';
 import css from './Catalog.module.css';
+import Loader from 'components/Loader/Loader';
 
 export const Catalog = () => {
   const [campers, setCampers] = useState([]);
@@ -20,10 +21,15 @@ export const Catalog = () => {
   return (
     <div className={css.container}>
       <CamperSearchForm />
-      {loading && <div>Loading...</div>}
-      {/* {errorMessage && <ErrorMessage message={errorMessage} />} */}
-      {errorMessage}
-      {campers.length !== 0 && <InfoBlock campers={campers} />}
+      <div className={css.campers}>
+        <Loader />
+        ---------------------------
+        {loading && <Loader />}
+        {loading && <span>LOADER</span>}
+        {/* {errorMessage && <ErrorMessage message={errorMessage} />} */}
+        {errorMessage}
+        {campers.length !== 0 && <InfoBlock campers={campers} />}
+      </div>
     </div>
   );
 };
