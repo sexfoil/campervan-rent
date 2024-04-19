@@ -9,7 +9,7 @@ const CamperInfoList = ({ campers }) => {
     <div className={css.container}>
       <ul className={css.list}>
         {campers.map(camper => {
-          return <CamperInfoCard key={camper._id} {...camper} />;
+          return <CamperInfoCard key={camper._id} camper={camper} />;
         })}
       </ul>
       <LoadMoreButton name={NAMES.BUTTONS.loadMore} />
