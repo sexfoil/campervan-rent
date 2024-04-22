@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchCampers } from './thunk';
+import { fetchCampers, fetchCampersFilterBy } from './thunk';
 import { handlePending, handleRejected } from './handler';
+import { NAMES } from 'properties/Constants';
 
 const campervanSlice = createSlice({
   name: 'campervans',
@@ -9,6 +10,8 @@ const campervanSlice = createSlice({
       campers: [],
       loading: false,
       error: null,
+      loadMore: false,
+      currentPage: 0,
     },
     favorites: [],
     filter: '',
@@ -25,12 +28,27 @@ const campervanSlice = createSlice({
     builder
       .addCase(fetchCampers.fulfilled, ({ campervans }, { payload }) => {
         campervans.loading = false;
-        campervans.campers = payload;
+        campervans.loadMore = payload.length === NAMES.PAGINATION.limit;
+        if (campervans.currentPage > 1) {
+          campervans.campers = [...campervans.campers, ...payload];
+        } else {
+          campervans.campers = payload;
+        }
+        campervans.currentPage = campervans.currentPage + 1;
       })
-      // .addCase(addContact.fulfilled, ({ contacts }, { payload }) => {
-      //   contacts.isLoading = false;
-      //   contacts.items.push(payload);
-      // })
+      .addCase(
+        fetchCampersFilterBy.fulfilled,
+        ({ campervans }, { payload }) => {
+          campervans.loading = false;
+          campervans.loadMore = payload.length === NAMES.PAGINATION.limit;
+          if (campervans.currentPage > 1) {
+            campervans.campers = [...campervans.campers, ...payload];
+          } else {
+            campervans.campers = payload;
+          }
+          campervans.currentPage = campervans.currentPage + 1;
+        }
+      )
       // .addCase(deleteContact.fulfilled, ({ contacts }, { payload }) => {
       //   contacts.isLoading = false;
       //   contacts.items = contacts.items.filter(item => item.id !== payload.id);

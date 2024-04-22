@@ -1,18 +1,18 @@
 import { useEffect, useState } from 'react';
 
-export const useScrollPosition = () => {
-  const [scrollPos, setScrollPos] = useState(false);
+export const useScrollVisibility = () => {
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', () => {
         if (window.scrollY > 100) {
-          setScrollPos(true);
+          setIsVisible(true);
         } else {
-          setScrollPos(false);
+          setIsVisible(false);
         }
       });
     }
   }, []);
-  return { scrollPos };
+  return { isVisible };
 };

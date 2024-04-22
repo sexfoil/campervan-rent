@@ -1,31 +1,30 @@
-import { useEffect } from 'react';
 import CamperSearchForm from 'components/Search/CamperSearchForm/CamperSearchForm';
-import InfoBlock from 'components/InfoBlock/InfoBlock';
-import Loader from 'components/Loader/Loader';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectCampers, selectError, selectLoading } from 'store/selector';
-import { fetchCampers } from 'store/thunk';
+import CamperInfoList from 'components/Camper/CamperInfoList/CamperInfoList';
+import SvgIcon from 'components/SvgIcon/SvgIcon';
+import { useScrollVisibility } from 'hooks/useScrollVisibility';
 import css from './Catalog.module.css';
 
 export const Catalog = () => {
-  const dispatch = useDispatch();
-  const campers = useSelector(selectCampers);
-  const loading = useSelector(selectLoading);
-  const error = useSelector(selectError);
+  const scrollUp = useScrollVisibility(false);
 
-  useEffect(() => {
-    dispatch(fetchCampers());
-  }, [dispatch]);
+  const onClickScrollUp = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
     <div className={css.container}>
       <CamperSearchForm />
       <div className={css.campers}>
-        {loading && <Loader />}
-        {/* {errorMessage && <ErrorMessage message={errorMessage} />} */}
+        {/* {loading && <Loader />}
         {error}
-        {campers.length !== 0 && <InfoBlock campers={campers} />}
+        {campers.length !== 0 && (
+          <InfoBlock campers={campers} loadMore={loadMore} />
+        )} */}
+        <CamperInfoList />
       </div>
+      {scrollUp.isVisible && (
+        <button className={css.scroll} type="button" onClick={onClickScrollUp}>
+          <SvgIcon icon={'scrollup'} />
+        </button>
+      )}
     </div>
   );
 };

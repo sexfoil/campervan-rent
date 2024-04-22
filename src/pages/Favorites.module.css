@@ -9,18 +9,25 @@
   margin: 32px auto;
 }
 
+.list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+  width: 100%;
+}
+
 .scroll {
   position: fixed;
-  right: 32px;
-  bottom: 32px;
+  right: 0px;
+  bottom: 0px;
   width: 64px;
   height: 64px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 12px;
-  fill: #475467;
-  stroke: #475467;
+  fill: #47546760;
+  stroke: #47546760;
   stroke-width: 0;
   border-radius: 50%;
   background-color: transparent;

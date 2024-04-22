@@ -62,4 +62,7 @@ export const NAMES = {
     fully: 'Fully Integrated',
     alcove: 'Alcove',
   },
+  PAGINATION: {
+    limit: 4,
+  },
 };

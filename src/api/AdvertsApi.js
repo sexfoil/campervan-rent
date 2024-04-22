@@ -3,8 +3,23 @@ import { PATHS } from 'properties/Constants';
 
 axios.defaults.baseURL = PATHS.baseUrl;
 
-export const findAll = async () => {
-  const response = await axios.get(PATHS.advert);
+const getParametersString = params => {
+  const urlSearchParams = new URLSearchParams(params);
+  return `?${urlSearchParams}`;
+};
+
+export const findAll = async (page = 1, limit = 20) => {
+  const url = PATHS.advert + getParametersString({ page, limit });
+  console.log('url>>', url);
+  const response = await axios.get(url);
+  return response;
+};
+
+export const findAllFilterBy = async (filterParams, page = 1, limit = 20) => {
+  const url =
+    PATHS.advert + getParametersString({ ...filterParams, page, limit });
+  console.log('url>>', url);
+  const response = await axios.get(url);
   return response;
 };
 

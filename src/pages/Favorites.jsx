@@ -1,41 +1,29 @@
-import { useEffect, useState } from 'react';
-import css from './Favorites.module.css';
-import InfoBlock from 'components/InfoBlock/InfoBlock';
 import SvgIcon from 'components/SvgIcon/SvgIcon';
 import { useSelector } from 'react-redux';
 import { selectFavorites } from 'store/selector';
+import CamperInfoCard from 'components/Camper/CamperInfoCard/CamperInfoCard';
+import { useScrollVisibility } from 'hooks/useScrollVisibility';
+import css from './Favorites.module.css';
 
 const Favorites = () => {
-  // const dispatch = useDispatch();
   const favorites = useSelector(selectFavorites);
-  const [scrollUpVisible, setScrollUpVisible] = useState(false);
+  const scrollUp = useScrollVisibility(false);
 
-  const scrollUp = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-
-  useEffect(() => {
-    const toggleVisibility = () => {
-      const position = window.scrollY;
-      if (position > 100) {
-        setScrollUpVisible(true);
-      } else {
-        setScrollUpVisible(false);
-      }
-    };
-
-    window.addEventListener('scroll', toggleVisibility);
-
-    return () => window.removeEventListener('scroll', toggleVisibility);
-  }, [scrollUpVisible]);
+  const onClickScrollUp = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
     <div className={css.container}>
       {favorites.length !== 0 ? (
-        <InfoBlock campers={favorites} />
+        <ul className={css.list}>
+          {favorites.map(camper => {
+            return <CamperInfoCard key={camper._id} camper={camper} />;
+          })}
+        </ul>
       ) : (
-        'NO FAVORITES'
+        'It seems you have no favorites yet'
       )}
-      {scrollUpVisible && (
-        <button className={css.scroll} type="button" onClick={scrollUp}>
+      {scrollUp.isVisible && (
+        <button className={css.scroll} type="button" onClick={onClickScrollUp}>
           <SvgIcon icon={'scrollup'} />
         </button>
       )}
