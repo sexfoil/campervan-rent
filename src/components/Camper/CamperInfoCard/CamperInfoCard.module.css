@@ -24,3 +24,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.image {
+  max-width: 35%;
+  object-fit: cover;
+  border-radius: 10px;
+}

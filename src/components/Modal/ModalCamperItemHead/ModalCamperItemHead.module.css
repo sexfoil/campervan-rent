@@ -1,0 +1,25 @@
+.container {
+  border: 1px solid transparent;
+  margin: 0 40px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  column-gap: 16px;
+}
+
+.imageBox {
+  border-radius: 16px;
+  overflow: hidden;
+  height: 310px;
+  display: flex;
+}
+
+.image {
+  object-fit: cover;
+}
