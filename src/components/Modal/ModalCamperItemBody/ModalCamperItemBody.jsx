@@ -1,14 +1,23 @@
+import CamperFeatureList from 'components/Camper/CamperFeatureList/CamperFeatureList';
 import css from './ModalCamperItemBody.module.css';
+import ModalCamperItemForm from '../ModalCamperItemForm/ModalCamperItemForm';
 
-export const ModalCamperItemBody = () => {
+export const ModalCamperItemBody = ({ camper }) => {
   return (
-    <div className={css.backdrop}>
-      <div className={css.container}>
-        <div className={css.svgBoxClose}>
-          {/* <SvgIcon icon={'close'} /> */}BODY
+    <>
+      {camper && (
+        <div className={css.container}>
+          <div className={css.partsHeader}>Features | Reviews</div>
+          <div className={css.partsBody}>
+            <div className={css.part}>
+              <CamperFeatureList details={camper.details} />
+              <div>Details</div>
+            </div>
+            <ModalCamperItemForm />
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 

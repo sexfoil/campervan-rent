@@ -32,7 +32,7 @@ export const ModalCamperItem = ({ campers }) => {
         </div>
         <div className={css.contentBox}>
           <ModalCamperItemHead camper={campers[0]} />
-          <ModalCamperItemBody />
+          <ModalCamperItemBody camper={campers[0]} />
         </div>
       </div>
     </div>
