@@ -62,4 +62,18 @@ export const NAMES = {
     fully: 'Fully Integrated',
     alcove: 'Alcove',
   },
+  PAGINATION: {
+    limit: 4,
+  },
+  TOOLS_FILTER_SET: {
+    TV: 'AC',
+    CD: 'CD',
+    radio: 'Radio',
+    shower: 'Shower',
+    toilet: 'Toilet',
+    bathroom: 'bathroom',
+    freezer: 'Freezer',
+    hob: 'hob',
+    microwave: 'Microwave',
+  },
 };

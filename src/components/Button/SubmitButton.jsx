@@ -1,7 +1,11 @@
 import css from './Button.module.css';
 
 const SubmitButton = ({ name }) => {
-  return <div className={`${css.button} ${css.submit}`}>{name}</div>;
+  return (
+    <button className={`${css.button} ${css.submit}`} type="submit">
+      {name}
+    </button>
+  );
 };
 
 export default SubmitButton;
