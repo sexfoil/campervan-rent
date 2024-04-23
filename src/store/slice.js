@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchCampers, fetchCampersFilterBy } from './thunk';
+import { fetchCampers } from './thunk';
 import { handlePending, handleRejected } from './handler';
 import { NAMES } from 'properties/Constants';
 
@@ -14,14 +14,24 @@ const campervanSlice = createSlice({
       currentPage: 0,
     },
     favorites: [],
-    filter: '',
+    locationFilter: '',
+    toolsFilter: [],
   },
   reducers: {
     updateFavorites: (state, { payload }) => {
       state.favorites = payload;
     },
-    updateFilter: (state, { payload }) => {
-      state.filter = payload;
+    updateLocationFilter: (state, { payload }) => {
+      state.locationFilter = payload;
+    },
+    addToolsFilter: (state, { payload }) => {
+      state.toolsFilter = [...state.toolsFilter, payload];
+    },
+    removeToolsFilter: (state, { payload }) => {
+      state.toolsFilter = state.toolsFilter.filter(tool => tool !== payload);
+    },
+    updateCurrentPage: (state, { payload }) => {
+      state.currentPage = payload;
     },
   },
   extraReducers: builder => {
@@ -36,19 +46,19 @@ const campervanSlice = createSlice({
         }
         campervans.currentPage = campervans.currentPage + 1;
       })
-      .addCase(
-        fetchCampersFilterBy.fulfilled,
-        ({ campervans }, { payload }) => {
-          campervans.loading = false;
-          campervans.loadMore = payload.length === NAMES.PAGINATION.limit;
-          if (campervans.currentPage > 1) {
-            campervans.campers = [...campervans.campers, ...payload];
-          } else {
-            campervans.campers = payload;
-          }
-          campervans.currentPage = campervans.currentPage + 1;
-        }
-      )
+      // .addCase(
+      //   fetchCampersFilterBy.fulfilled,
+      //   ({ campervans }, { payload }) => {
+      //     campervans.loading = false;
+      //     campervans.loadMore = payload.length === NAMES.PAGINATION.limit;
+      //     if (campervans.currentPage > 1) {
+      //       campervans.campers = [...campervans.campers, ...payload];
+      //     } else {
+      //       campervans.campers = payload;
+      //     }
+      //     campervans.currentPage = campervans.currentPage + 1;
+      //   }
+      // )
       // .addCase(deleteContact.fulfilled, ({ contacts }, { payload }) => {
       //   contacts.isLoading = false;
       //   contacts.items = contacts.items.filter(item => item.id !== payload.id);
@@ -59,4 +69,10 @@ const campervanSlice = createSlice({
 });
 
 export const campervanReducer = campervanSlice.reducer;
-export const { updateFilter, updateFavorites } = campervanSlice.actions;
+export const {
+  updateLocationFilter,
+  addToolsFilter,
+  removeToolsFilter,
+  updateFavorites,
+  updateCurrentPage,
+} = campervanSlice.actions;

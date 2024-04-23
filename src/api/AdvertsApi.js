@@ -8,9 +8,15 @@ const getParametersString = params => {
   return `?${urlSearchParams}`;
 };
 
-export const findAll = async (page = 1, limit = 20) => {
-  const url = PATHS.advert + getParametersString({ page, limit });
-  console.log('url>>', url);
+export const findAll = async (page = 1, limit = 20, locationValue) => {
+  const url =
+    PATHS.advert +
+    getParametersString({
+      page,
+      limit,
+      ...(locationValue && { location: locationValue }),
+    });
+  // console.log('url>>', url);
   const response = await axios.get(url);
   return response;
 };
@@ -18,6 +24,7 @@ export const findAll = async (page = 1, limit = 20) => {
 export const findAllFilterBy = async (filterParams, page = 1, limit = 20) => {
   const url =
     PATHS.advert + getParametersString({ ...filterParams, page, limit });
+  console.log('fParams>>', filterParams);
   console.log('url>>', url);
   const response = await axios.get(url);
   return response;

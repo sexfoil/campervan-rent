@@ -5,7 +5,11 @@ export const fetchCampers = createAsyncThunk(
   'adverts/fetchAll',
   async (params, thunkAPI) => {
     try {
-      const response = await findAll(params?.page, params?.limit);
+      const response = await findAll(
+        params?.page,
+        params?.limit,
+        params?.location
+      );
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -18,7 +22,7 @@ export const fetchCampersFilterBy = createAsyncThunk(
   async (params, thunkAPI) => {
     try {
       const response = await findAllFilterBy(
-        params?.filter,
+        params?.location,
         params?.page,
         params?.limit
       );

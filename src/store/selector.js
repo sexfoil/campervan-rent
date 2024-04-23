@@ -6,5 +6,7 @@ export const selectCurrentPage = state =>
   state.campervanrent.campervans.currentPage;
 
 export const selectFavorites = state => state.campervanrent.favorites;
+export const selectLocationFilter = state => state.campervanrent.locationFilter;
+export const selectToolsFilter = state => state.campervanrent.toolsFilter;
 
 // export const selectFilter = state => state.phonebook.filter;

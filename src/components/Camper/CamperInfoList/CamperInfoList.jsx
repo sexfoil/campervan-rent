@@ -6,6 +6,8 @@ import {
   selectError,
   selectLoadMore,
   selectLoading,
+  selectLocationFilter,
+  selectToolsFilter,
 } from 'store/selector';
 import { useEffect } from 'react';
 import { fetchCampers } from 'store/thunk';
@@ -21,16 +23,31 @@ const CamperInfoList = () => {
   const error = useSelector(selectError);
   const loadMore = useSelector(selectLoadMore);
   const currentPage = useSelector(selectCurrentPage);
+  const locationFilter = useSelector(selectLocationFilter);
+  const toolsFilter = useSelector(selectToolsFilter);
 
   useEffect(() => {
-    dispatch(fetchCampers({ page: 1, limit: NAMES.PAGINATION.limit }));
+    dispatch(
+      fetchCampers({
+        page: 1,
+        limit: NAMES.PAGINATION.limit,
+      })
+    );
   }, [dispatch]);
 
   const onClickLoadMore = () => {
-    console.log('loadMore>> ', loadMore);
+    // console.log('loadMore>> ', loadMore);
     dispatch(
-      fetchCampers({ page: currentPage, limit: NAMES.PAGINATION.limit })
+      fetchCampers({
+        page: currentPage,
+        limit: NAMES.PAGINATION.limit,
+        location: locationFilter,
+      })
     );
+  };
+
+  const hasTools = camperTools => {
+    return toolsFilter.every(filter => camperTools[filter] > 0);
   };
 
   return (
@@ -38,9 +55,11 @@ const CamperInfoList = () => {
       {error}
       {campers.length !== 0 && (
         <ul className={css.list}>
-          {campers.map(camper => {
-            return <CamperInfoCard key={camper._id} camper={camper} />;
-          })}
+          {campers
+            .filter(camper => hasTools(camper.details))
+            .map(camper => {
+              return <CamperInfoCard key={camper._id} camper={camper} />;
+            })}
         </ul>
       )}
       {loading && <Loader />}
