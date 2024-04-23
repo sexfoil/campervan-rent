@@ -16,10 +16,7 @@ function App() {
           <Route path={PATHS.home} element={<Header />}>
             <Route index element={<Home />} />
             <Route path={PATHS.catalog} element={<Catalog />} />
-            <Route path={PATHS.favorites} element={<Favorites />}>
-              <Route path="one" element={<div>ONE</div>} />
-              <Route path="two" element={<div>TWO</div>} />
-            </Route>
+            <Route path={PATHS.favorites} element={<Favorites />} />
           </Route>
           <Route path="*" element={<Navigate to={PATHS.home} />} />
         </Routes>
