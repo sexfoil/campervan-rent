@@ -84,4 +84,8 @@ export const NAMES = {
     tank: 'Tank',
     consumption: 'Consumption',
   },
+  TABS: {
+    features: 'Features',
+    reviews: 'Reviews',
+  },
 };

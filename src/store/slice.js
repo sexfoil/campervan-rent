@@ -17,8 +17,12 @@ const campervanSlice = createSlice({
     favorites: [],
     locationFilter: '',
     toolsFilter: [],
+    activeTab: NAMES.TABS.features,
   },
   reducers: {
+    updateActiveTab: (state, { payload }) => {
+      state.activeTab = payload;
+    },
     updateCurrentCamper: (state, { payload }) => {
       state.currentCamper = payload;
     },
@@ -80,4 +84,5 @@ export const {
   updateFavorites,
   updateCurrentPage,
   updateCurrentCamper,
+  updateActiveTab,
 } = campervanSlice.actions;
