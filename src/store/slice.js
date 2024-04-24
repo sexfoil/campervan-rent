@@ -13,11 +13,15 @@ const campervanSlice = createSlice({
       loadMore: false,
       currentPage: 0,
     },
+    currentCamper: null,
     favorites: [],
     locationFilter: '',
     toolsFilter: [],
   },
   reducers: {
+    updateCurrentCamper: (state, { payload }) => {
+      state.currentCamper = payload;
+    },
     updateFavorites: (state, { payload }) => {
       state.favorites = payload;
     },
@@ -75,4 +79,5 @@ export const {
   removeToolsFilter,
   updateFavorites,
   updateCurrentPage,
+  updateCurrentCamper,
 } = campervanSlice.actions;

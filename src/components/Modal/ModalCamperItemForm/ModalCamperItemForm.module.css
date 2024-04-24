@@ -1,0 +1,7 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 44px;
+  border: 1px solid teal;
+  width: calc((100% - 24px) / 2);
+}

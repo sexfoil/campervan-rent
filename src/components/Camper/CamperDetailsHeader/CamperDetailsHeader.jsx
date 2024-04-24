@@ -8,7 +8,7 @@ import { selectFavorites } from 'store/selector';
 import { updateFavorites } from 'store/slice';
 import css from './CamperDetailsHeader.module.css';
 
-const CamperDetailsHeader = ({ camper }) => {
+const CamperDetailsHeader = ({ camper, modal }) => {
   const dispatch = useDispatch();
   const favorites = useSelector(selectFavorites);
 
@@ -37,7 +37,13 @@ const CamperDetailsHeader = ({ camper }) => {
       </div>
       <Price currency={NAMES.CURRENCY.euro} price={camper.price} />
       <div className={css.svgBox} onClick={() => swapFavorites()}>
-        <span className={css[`${isFavorite(camper._id) ? 'favorite' : ''}`]}>
+        <span
+          className={
+            css[
+              `${modal ? 'hidden' : isFavorite(camper._id) ? 'favorite' : ''}`
+            ]
+          }
+        >
           <SvgIcon icon={'heart'} />
         </span>
       </div>
