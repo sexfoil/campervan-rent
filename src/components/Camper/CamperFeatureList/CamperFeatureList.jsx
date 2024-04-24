@@ -2,13 +2,13 @@ import { NAMES } from 'properties/Constants';
 import CamperFeatureItem from '../CamperFeatureItem/CamperFeatureItem';
 import css from './CamperFeatureList.module.css';
 
-const CamperFeatureList = ({ details }) => {
+const CamperFeatureList = ({ features }) => {
   return (
     <ul className={css.container}>
-      {Object.keys(details)
-        .filter(name => details[name])
+      {Object.keys(features)
+        .filter(name => features[name])
         .map(name => {
-          const detail = details[name];
+          const detail = features[name];
           const detailValue =
             detail && typeof detail === 'number' && detail > 1 ? detail : '';
           return (

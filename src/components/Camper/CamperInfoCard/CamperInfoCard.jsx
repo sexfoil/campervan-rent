@@ -13,7 +13,7 @@ const CamperInfoCard = ({ camper }) => {
       <div className={css.infoblock}>
         <CamperDetailsHeader camper={camper} modal={false} />
         <p className={css.description}>{camper.description}</p>
-        <CamperFeatureList details={camper.details} />
+        <CamperFeatureList features={camper.details} />
         <Button name={NAMES.BUTTONS.showMore} />
       </div>
     </li>

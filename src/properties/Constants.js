@@ -76,4 +76,12 @@ export const NAMES = {
     hob: 'hob',
     microwave: 'Microwave',
   },
+  VEHICLE_DETAILS: {
+    form: 'Form',
+    length: 'Length',
+    width: 'Width',
+    height: 'Height',
+    tank: 'Tank',
+    consumption: 'Consumption',
+  },
 };

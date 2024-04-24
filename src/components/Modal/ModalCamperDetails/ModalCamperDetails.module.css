@@ -1,0 +1,29 @@
+.container {
+  border: 1px solid teal;
+  color: #101828;
+}
+
+.header {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 48px;
+}
+
+.list {
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.item {
+  width: 100%;
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
