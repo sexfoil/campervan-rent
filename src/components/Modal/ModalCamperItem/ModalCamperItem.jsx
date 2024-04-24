@@ -1,38 +1,28 @@
 import SvgIcon from 'components/SvgIcon/SvgIcon';
-import css from './ModalCamperItem.module.css';
 import ModalCamperItemHead from '../ModalCamperItemHead/ModalCamperItemHead';
 import ModalCamperItemBody from '../ModalCamperItemBody/ModalCamperItemBody';
-// import { useSelector } from 'react-redux';
-// import { selectCurrentCamper } from 'store/selector';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { selectCampers } from 'store/selector';
-// import { useEffect } from 'react';
-// import { fetchCampers } from 'store/thunk';
-// import { NAMES } from 'properties/Constants';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectCurrentCamper } from 'store/selector';
+import css from './ModalCamperItem.module.css';
+import { updateCurrentCamper } from 'store/slice';
 
-export const ModalCamperItem = ({ campers }) => {
-  // const camper = useSelector(selectCurrentCamper);
+export const ModalCamperItem = () => {
+  const dispatch = useDispatch();
 
-  // const dispatch = useDispatch();
-  // const campers = useSelector(selectCampers);
-  // useEffect(() => {
-  //   dispatch(
-  //     fetchCampers({
-  //       page: 1,
-  //       limit: NAMES.PAGINATION.limit,
-  //     })
-  //   );
-  // }, [dispatch]);
+  const camper = useSelector(selectCurrentCamper);
+  const onClickClose = () => {
+    dispatch(updateCurrentCamper(null));
+  };
 
   return (
     <div className={css.backdrop}>
       <div className={css.container}>
-        <div className={css.svgBoxClose}>
+        <div className={css.svgBoxClose} onClick={onClickClose}>
           <SvgIcon icon={'close'} />
         </div>
         <div className={css.contentBox}>
-          <ModalCamperItemHead camper={campers[0]} />
-          <ModalCamperItemBody camper={campers[0]} />
+          <ModalCamperItemHead camper={camper} />
+          <ModalCamperItemBody camper={camper} />
         </div>
       </div>
     </div>

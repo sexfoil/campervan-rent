@@ -4,27 +4,15 @@ import SvgIcon from 'components/SvgIcon/SvgIcon';
 import { useScrollVisibility } from 'hooks/useScrollVisibility';
 import css from './Catalog.module.css';
 import ModalCamperItem from 'components/Modal/ModalCamperItem/ModalCamperItem';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectCampers } from 'store/selector';
-import { useEffect } from 'react';
-import { fetchCampers } from 'store/thunk';
-import { NAMES } from 'properties/Constants';
+import { useSelector } from 'react-redux';
+import { selectCurrentCamper } from 'store/selector';
 
 export const Catalog = () => {
   const scrollUp = useScrollVisibility(false);
 
   const onClickScrollUp = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  const dispatch = useDispatch();
-  const campers = useSelector(selectCampers);
-  useEffect(() => {
-    dispatch(
-      fetchCampers({
-        page: 1,
-        limit: NAMES.PAGINATION.limit,
-      })
-    );
-  }, [dispatch]);
+  const camper = useSelector(selectCurrentCamper);
 
   return (
     <>
@@ -48,7 +36,7 @@ export const Catalog = () => {
           </button>
         )}
       </div>
-      <ModalCamperItem campers={campers} />
+      {camper && <ModalCamperItem />}
     </>
   );
 };
