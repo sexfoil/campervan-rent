@@ -11,7 +11,8 @@ const campervanSlice = createSlice({
       loading: false,
       error: null,
       loadMore: false,
-      currentPage: 0,
+      currentPage: 1,
+      searchLocation: '',
     },
     currentCamper: null,
     favorites: [],
@@ -38,8 +39,11 @@ const campervanSlice = createSlice({
     removeToolsFilter: (state, { payload }) => {
       state.toolsFilter = state.toolsFilter.filter(tool => tool !== payload);
     },
-    updateCurrentPage: (state, { payload }) => {
-      state.currentPage = payload;
+    updateCurrentPage: ({ campervans }, { payload }) => {
+      campervans.currentPage = payload;
+    },
+    updateSearchLocation: ({ campervans }, { payload }) => {
+      campervans.searchLocation = payload;
     },
   },
   extraReducers: builder => {
@@ -52,27 +56,7 @@ const campervanSlice = createSlice({
         } else {
           campervans.campers = payload;
         }
-        campervans.currentPage = campervans.currentPage + 1;
-        console.log('current page>> ', campervans.currentPage);
-        console.log('campers>> ', campervans.campers);
       })
-      // .addCase(
-      //   fetchCampersFilterBy.fulfilled,
-      //   ({ campervans }, { payload }) => {
-      //     campervans.loading = false;
-      //     campervans.loadMore = payload.length === NAMES.PAGINATION.limit;
-      //     if (campervans.currentPage > 1) {
-      //       campervans.campers = [...campervans.campers, ...payload];
-      //     } else {
-      //       campervans.campers = payload;
-      //     }
-      //     campervans.currentPage = campervans.currentPage + 1;
-      //   }
-      // )
-      // .addCase(deleteContact.fulfilled, ({ contacts }, { payload }) => {
-      //   contacts.isLoading = false;
-      //   contacts.items = contacts.items.filter(item => item.id !== payload.id);
-      // })
       .addMatcher(action => action.type.endsWith('pending'), handlePending)
       .addMatcher(action => action.type.endsWith('rejected'), handleRejected);
   },
@@ -80,11 +64,12 @@ const campervanSlice = createSlice({
 
 export const campervanReducer = campervanSlice.reducer;
 export const {
-  updateLocationFilter,
   addToolsFilter,
   removeToolsFilter,
-  updateFavorites,
   updateCurrentPage,
+  updateSearchLocation,
+  updateLocationFilter,
+  updateFavorites,
   updateCurrentCamper,
   updateActiveTab,
 } = campervanSlice.actions;

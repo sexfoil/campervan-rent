@@ -7,6 +7,7 @@ import {
   selectLoadMore,
   selectLoading,
   selectLocationFilter,
+  selectSearchLocation,
   selectToolsFilter,
 } from 'store/selector';
 import { useEffect } from 'react';
@@ -15,6 +16,7 @@ import Loader from 'components/Loader/Loader';
 import LoadMoreButton from 'components/Button/LoadMoreButton';
 import { useDispatch, useSelector } from 'react-redux';
 import css from './CamperInfoList.module.css';
+import { updateCurrentPage } from 'store/slice';
 
 const CamperInfoList = () => {
   const dispatch = useDispatch();
@@ -23,30 +25,39 @@ const CamperInfoList = () => {
   const error = useSelector(selectError);
   const loadMore = useSelector(selectLoadMore);
   const currentPage = useSelector(selectCurrentPage);
+  const searchLocation = useSelector(selectSearchLocation);
   const locationFilter = useSelector(selectLocationFilter);
   const toolsFilter = useSelector(selectToolsFilter);
 
   useEffect(() => {
     dispatch(
       fetchCampers({
-        page: 1,
-        limit: NAMES.PAGINATION.limit,
-      })
-    );
-  }, [dispatch]);
-
-  const onClickLoadMore = () => {
-    dispatch(
-      fetchCampers({
         page: currentPage,
         limit: NAMES.PAGINATION.limit,
-        location: locationFilter,
+        location: searchLocation,
       })
     );
+  }, [dispatch, currentPage, searchLocation]);
+
+  const onClickLoadMore = () => {
+    dispatch(updateCurrentPage(currentPage + 1));
   };
 
-  const hasTools = camperTools => {
-    return toolsFilter.every(filter => camperTools[filter] > 0);
+  const allMatches = camper => {
+    const types = Object.keys(NAMES.CAMPER_TYPES);
+    const checkedTypes = toolsFilter.filter(item => types.includes(item));
+    if (checkedTypes.length > 0 && !checkedTypes.includes(camper.form)) {
+      return false;
+    }
+
+    const features = Object.keys(NAMES.FEATURES);
+    const checkedFeatures = toolsFilter.filter(item => features.includes(item));
+
+    return checkedFeatures.every(filter => camper.details[filter] > 0);
+  };
+
+  const fromLocation = camperLocation => {
+    return camperLocation.toLowerCase().includes(locationFilter.toLowerCase());
   };
 
   return (
@@ -55,7 +66,8 @@ const CamperInfoList = () => {
       {campers.length !== 0 && (
         <ul className={css.list}>
           {campers
-            .filter(camper => hasTools(camper.details))
+            .filter(camper => fromLocation(camper.location))
+            .filter(camper => allMatches(camper))
             .map(camper => {
               return <CamperInfoCard key={camper._id} camper={camper} />;
             })}
