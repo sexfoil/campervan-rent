@@ -53,6 +53,8 @@ const campervanSlice = createSlice({
           campervans.campers = payload;
         }
         campervans.currentPage = campervans.currentPage + 1;
+        console.log('current page>> ', campervans.currentPage);
+        console.log('campers>> ', campervans.campers);
       })
       // .addCase(
       //   fetchCampersFilterBy.fulfilled,
