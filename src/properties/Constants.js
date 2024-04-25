@@ -58,8 +58,8 @@ export const NAMES = {
     type: 'Vehicle type',
   },
   CAMPER_TYPES: {
-    van: 'Van',
-    fully: 'Fully Integrated',
+    panelTruck: 'Van',
+    fullyIntegrated: 'Fully Integrated',
     alcove: 'Alcove',
   },
   PAGINATION: {

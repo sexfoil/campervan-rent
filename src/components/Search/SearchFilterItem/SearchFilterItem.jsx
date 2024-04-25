@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { addToolsFilter, removeToolsFilter } from 'store/slice';
 import css from './SearchFilterItem.module.css';
 
-const SearchFilterItem = ({ name, icon }) => {
+const SearchFilterItem = ({ name, icon, nameValue }) => {
   const dispatch = useDispatch();
 
   const updateStatus = filter => {
@@ -26,7 +26,7 @@ const SearchFilterItem = ({ name, icon }) => {
         <div className={css.svgBox}>
           <SvgIcon icon={icon} />
         </div>
-        {name}
+        {nameValue}
       </label>
     </li>
   );
