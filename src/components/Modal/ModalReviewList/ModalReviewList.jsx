@@ -1,8 +1,9 @@
 import ModalReviewItem from '../ModalReviewItem/ModalReviewItem';
+import css from './ModalReviewList.module.css';
 
 const ModalReviewList = ({ reviews }) => {
   return (
-    <ul>
+    <ul className={css.container}>
       {reviews.map(review => {
         return (
           <li key={review.reviewer_name}>
