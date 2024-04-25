@@ -1,7 +1,40 @@
 .container {
   display: flex;
   flex-direction: column;
-  row-gap: 44px;
-  border: 1px solid teal;
+  justify-content: space-between;
+  align-items: start;
+  row-gap: 24px;
+  border: 1px solid #10182820;
+  border-radius: 10px;
   width: calc((100% - 24px) / 2);
+  padding: 24px;
+}
+
+.header > h2 {
+  color: #101828;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.header > p {
+  color: #475467;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.fields {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+  color: #10182860;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.input {
+  padding: 18px;
+  border: none;
+  border-radius: 10px;
+  background-color: #f7f7f7;
 }
