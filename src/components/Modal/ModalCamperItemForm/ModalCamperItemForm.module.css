@@ -32,9 +32,18 @@
   font-weight: 400;
 }
 
-.input {
+.input,
+.date,
+.textarea {
   padding: 18px;
   border: none;
   border-radius: 10px;
   background-color: #f7f7f7;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: inherit;
+}
+
+.textarea {
+  resize: none;
 }
