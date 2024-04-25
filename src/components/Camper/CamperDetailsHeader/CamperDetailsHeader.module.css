@@ -5,7 +5,6 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   row-gap: 16px;
   column-gap: 10px;
 }
@@ -42,4 +41,8 @@
 .hidden {
   fill: none;
   stroke: none;
+}
+
+.container:has(.hidden) {
+  flex-wrap: wrap;
 }

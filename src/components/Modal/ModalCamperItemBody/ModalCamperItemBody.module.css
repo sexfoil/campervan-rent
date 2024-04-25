@@ -2,23 +2,18 @@
   display: flex;
   flex-direction: column;
   row-gap: 44px;
-  border: 1px solid tomato;
   margin: 0 40px;
   margin-bottom: 40px;
 }
 
-.partsHeader {
-  border: 1px solid teal;
-  height: 48px;
-}
-
-.partsBody {
+.tabBody {
   display: flex;
   flex-direction: row;
   column-gap: 24px;
+  align-items: flex-start;
 }
 
-.part {
+.tab {
   display: flex;
   flex-direction: column;
   row-gap: 44px;

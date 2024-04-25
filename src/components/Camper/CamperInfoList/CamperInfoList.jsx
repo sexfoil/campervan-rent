@@ -36,7 +36,6 @@ const CamperInfoList = () => {
   }, [dispatch]);
 
   const onClickLoadMore = () => {
-    // console.log('loadMore>> ', loadMore);
     dispatch(
       fetchCampers({
         page: currentPage,

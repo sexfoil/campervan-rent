@@ -1,5 +1,4 @@
 .container {
-  /* border: 1px solid tomato; */
   position: relative;
   display: flex;
   flex-direction: row;
@@ -7,32 +6,11 @@
   align-items: flex-start;
   column-gap: 64px;
   margin: 100px 64px;
-  /* width: 100%; */
 }
 
 .campers {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* flex-grow: 5; */
   width: 64%;
-}
-
-.scroll {
-  position: fixed;
-  right: 0px;
-  bottom: 0px;
-  width: 64px;
-  height: 64px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 12px;
-  fill: #47546760;
-  stroke: #47546760;
-  stroke-width: 0;
-  border-radius: 50%;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
 }
