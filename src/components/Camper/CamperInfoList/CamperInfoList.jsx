@@ -60,21 +60,27 @@ const CamperInfoList = () => {
     return camperLocation.toLowerCase().includes(locationFilter.toLowerCase());
   };
 
+  const filteredCampers = campers => {
+    return campers
+      .filter(camper => fromLocation(camper.location))
+      .filter(camper => allMatches(camper));
+  };
+
   return (
     <div className={css.container}>
       {error}
       {campers.length !== 0 && (
         <ul className={css.list}>
-          {campers
-            .filter(camper => fromLocation(camper.location))
-            .filter(camper => allMatches(camper))
-            .map(camper => {
-              return <CamperInfoCard key={camper._id} camper={camper} />;
-            })}
+          {filteredCampers(campers).map(camper => {
+            return <CamperInfoCard key={camper._id} camper={camper} />;
+          })}
         </ul>
       )}
+      {filteredCampers(campers).length === 0 && !loading && (
+        <p>There is no camper to match your requirements</p>
+      )}
       {loading && <Loader />}
-      {loadMore && (
+      {filteredCampers(campers).length !== 0 && loadMore && (
         <LoadMoreButton
           name={NAMES.BUTTONS.loadMore}
           onClickLoadMore={onClickLoadMore}
