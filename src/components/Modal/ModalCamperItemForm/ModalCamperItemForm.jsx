@@ -1,8 +1,14 @@
 import SubmitButton from 'components/Button/SubmitButton';
 import css from './ModalCamperItemForm.module.css';
 import { NAMES } from 'properties/Constants';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateBooked } from 'store/slice';
+import { selectBooked } from 'store/selector';
 
-export const ModalCamperItemForm = () => {
+export const ModalCamperItemForm = ({ camper }) => {
+  const dispatch = useDispatch();
+  const booked = useSelector(selectBooked);
+
   const onDateFocus = evt => {
     evt.target.type = 'date';
   };
@@ -12,9 +18,12 @@ export const ModalCamperItemForm = () => {
   };
 
   const onSubmitBookingForm = evt => {
-    // evt.preventDefault();
-    // todo
-    console.log(evt.target);
+    evt.preventDefault();
+    const form = evt.target;
+    if (form.date.value >= new Date().toISOString().split('T')[0]) {
+      dispatch(updateBooked([...booked, camper._id]));
+      form.reset();
+    }
   };
 
   return (
@@ -31,14 +40,14 @@ export const ModalCamperItemForm = () => {
           placeholder="Name"
           pattern="^[a-zA-Zа-яА-ЯіІїЇєЄґҐ]+(([' \-][a-zA-Zа-яА-ЯіІїЇєЄґҐ ])?[a-zA-Zа-яА-ЯіІїЇєЄґҐ]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-          // required
+          required
         />
         <input
           className={css.input}
           name="email"
           type="email"
           placeholder="Email"
-          // required
+          required
         />
         <input
           className={css.date}
@@ -48,7 +57,7 @@ export const ModalCamperItemForm = () => {
           onFocus={evt => onDateFocus(evt)}
           onBlur={evt => onDateBlur(evt)}
           min={new Date().toISOString().split('T')[0]}
-          // required
+          required
         />
         <textarea
           className={css.textarea}
@@ -58,7 +67,11 @@ export const ModalCamperItemForm = () => {
           placeholder="Comment"
         />
       </div>
-      <SubmitButton name={NAMES.BUTTONS.send} />
+      {booked.includes(camper._id) ? (
+        'You have already booked this camper.'
+      ) : (
+        <SubmitButton name={NAMES.BUTTONS.send} />
+      )}
     </form>
   );
 };

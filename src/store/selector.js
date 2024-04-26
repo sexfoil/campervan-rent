@@ -12,3 +12,4 @@ export const selectLocationFilter = state => state.campervanrent.locationFilter;
 export const selectToolsFilter = state => state.campervanrent.toolsFilter;
 export const selectCurrentCamper = state => state.campervanrent.currentCamper;
 export const selectActiveTab = state => state.campervanrent.activeTab;
+export const selectBooked = state => state.campervanrent.booked;
