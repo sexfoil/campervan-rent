@@ -1,5 +1,5 @@
-import css from './CamperLocation.module.css';
 import SvgIcon from 'components/SvgIcon/SvgIcon';
+import css from './CamperLocation.module.css';
 
 const CamperLocation = ({ location }) => {
   return (

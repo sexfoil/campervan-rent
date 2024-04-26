@@ -1,9 +1,9 @@
-import { useSelector } from 'react-redux';
-import { selectCurrentCamper, selectFavorites } from 'store/selector';
 import CamperInfoCard from 'components/Camper/CamperInfoCard/CamperInfoCard';
 import ModalCamperItem from 'components/Modal/ModalCamperItem/ModalCamperItem';
-import { useScrollVisibility } from 'hooks/useScrollVisibility';
 import ScrollUpButton from 'components/Button/ScrollUpButton';
+import { useScrollVisibility } from 'hooks/useScrollVisibility';
+import { useSelector } from 'react-redux';
+import { selectCurrentCamper, selectFavorites } from 'store/selector';
 import css from './Favorites.module.css';
 
 const Favorites = () => {

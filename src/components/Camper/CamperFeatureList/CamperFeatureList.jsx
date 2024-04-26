@@ -1,5 +1,5 @@
-import { NAMES } from 'properties/Constants';
 import CamperFeatureItem from '../CamperFeatureItem/CamperFeatureItem';
+import { NAMES } from 'properties/Constants';
 import css from './CamperFeatureList.module.css';
 
 const CamperFeatureList = ({ features }) => {

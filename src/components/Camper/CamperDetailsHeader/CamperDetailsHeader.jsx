@@ -1,4 +1,3 @@
-import { NAMES } from 'properties/Constants';
 import Price from 'components/Price/Price';
 import Raiting from 'components/Rating/Rating';
 import CamperLocation from 'components/Location/CamperLocation';
@@ -6,6 +5,7 @@ import SvgIcon from 'components/SvgIcon/SvgIcon';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFavorites } from 'store/selector';
 import { updateFavorites } from 'store/slice';
+import { NAMES } from 'properties/Constants';
 import css from './CamperDetailsHeader.module.css';
 
 const CamperDetailsHeader = ({ camper, modal }) => {

@@ -1,5 +1,11 @@
 import CamperInfoCard from '../CamperInfoCard/CamperInfoCard';
+import Loader from 'components/Loader/Loader';
+import LoadMoreButton from 'components/Button/LoadMoreButton';
 import { NAMES } from 'properties/Constants';
+import { useEffect } from 'react';
+import { fetchCampers } from 'store/thunk';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateCurrentPage } from 'store/slice';
 import {
   selectCampers,
   selectCurrentPage,
@@ -10,13 +16,7 @@ import {
   selectSearchLocation,
   selectToolsFilter,
 } from 'store/selector';
-import { useEffect } from 'react';
-import { fetchCampers } from 'store/thunk';
-import Loader from 'components/Loader/Loader';
-import LoadMoreButton from 'components/Button/LoadMoreButton';
-import { useDispatch, useSelector } from 'react-redux';
 import css from './CamperInfoList.module.css';
-import { updateCurrentPage } from 'store/slice';
 
 const CamperInfoList = () => {
   const dispatch = useDispatch();

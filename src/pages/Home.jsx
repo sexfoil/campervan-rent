@@ -1,5 +1,5 @@
-import css from './Home.module.css';
 import background from 'img/banner.avif';
+import css from './Home.module.css';
 
 const Home = () => {
   return (

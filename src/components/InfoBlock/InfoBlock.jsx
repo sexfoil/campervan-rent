@@ -1,7 +1,7 @@
 import CamperInfoList from 'components/Camper/CamperInfoList/CamperInfoList';
-import css from './InfoBlock.module.css';
 import LoadMoreButton from 'components/Button/LoadMoreButton';
 import { NAMES } from 'properties/Constants';
+import css from './InfoBlock.module.css';
 
 const InfoBlock = ({ campers, loadMore }) => {
   return (

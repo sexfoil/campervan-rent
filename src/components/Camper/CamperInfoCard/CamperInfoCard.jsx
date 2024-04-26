@@ -1,10 +1,10 @@
 import CamperDetailsHeader from 'components/Camper/CamperDetailsHeader/CamperDetailsHeader';
 import CamperFeatureList from '../CamperFeatureList/CamperFeatureList';
 import Button from 'components/Button/Button';
-import { NAMES } from 'properties/Constants';
-import css from './CamperInfoCard.module.css';
 import { useDispatch } from 'react-redux';
 import { updateCurrentCamper } from 'store/slice';
+import { NAMES } from 'properties/Constants';
+import css from './CamperInfoCard.module.css';
 
 const CamperInfoCard = ({ camper }) => {
   const dispatch = useDispatch();

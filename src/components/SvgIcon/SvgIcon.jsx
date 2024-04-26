@@ -1,5 +1,5 @@
-import css from './SvgIcon.module.css';
 import icons from 'svg/icons.svg';
+import css from './SvgIcon.module.css';
 
 const SvgIcon = ({ icon }) => {
   return (

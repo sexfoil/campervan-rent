@@ -1,13 +1,13 @@
 import CamperFeatureList from 'components/Camper/CamperFeatureList/CamperFeatureList';
-import css from './ModalCamperItemBody.module.css';
 import ModalCamperItemForm from '../ModalCamperItemForm/ModalCamperItemForm';
 import ModalCamperDetails from '../ModalCamperDetails/ModalCamperDetails';
-import { NAMES } from 'properties/Constants';
 import ModalTabsHeader from '../ModalTabsHeader/ModalTabsHeader';
+import ModalReviewList from '../ModalReviewList/ModalReviewList';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectActiveTab } from 'store/selector';
 import { updateActiveTab } from 'store/slice';
-import ModalReviewList from '../ModalReviewList/ModalReviewList';
+import { NAMES } from 'properties/Constants';
+import css from './ModalCamperItemBody.module.css';
 
 export const ModalCamperItemBody = ({ camper }) => {
   const dispatch = useDispatch();

@@ -1,12 +1,10 @@
-import { Navigate, Route, Routes } from 'react-router-dom';
-// import { lazy } from 'react';
-import css from './App.module.css';
-import Header from './Header/Header';
-
-import { PATHS } from 'properties/Constants';
 import Home from 'pages/Home';
 import Catalog from 'pages/Catalog';
 import Favorites from 'pages/Favorites';
+import Header from './Header/Header';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { PATHS } from 'properties/Constants';
+import css from './App.module.css';
 
 function App() {
   return (

@@ -1,11 +1,11 @@
 import SubmitButton from 'components/Button/SubmitButton';
 import SearchFilterPanel from '../SearchFilterPanel/SearchFilterPanel';
 import SearchLocation from '../SearchLocation/SearchLocation';
-import { NAMES } from 'properties/Constants';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectLocationFilter } from 'store/selector';
 import { fetchCampers } from 'store/thunk';
 import { updateCurrentPage, updateSearchLocation } from 'store/slice';
+import { NAMES } from 'properties/Constants';
 import css from './CamperSearchForm.module.css';
 
 const CamperSearchForm = () => {
