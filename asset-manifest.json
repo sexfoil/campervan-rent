@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/campervan-rent/static/css/main.30f2fe4c.css",
-    "main.js": "/campervan-rent/static/js/main.d4479a40.js",
+    "main.css": "/campervan-rent/static/css/main.5158577e.css",
+    "main.js": "/campervan-rent/static/js/main.928b9963.js",
     "static/media/banner.avif": "/campervan-rent/static/media/banner.672ae41c35d571b99156.avif",
     "static/media/icons.svg": "/campervan-rent/static/media/icons.66edb4db75b7ec07d2b5985e6c1ea7d6.svg",
     "index.html": "/campervan-rent/index.html",
-    "main.30f2fe4c.css.map": "/campervan-rent/static/css/main.30f2fe4c.css.map",
-    "main.d4479a40.js.map": "/campervan-rent/static/js/main.d4479a40.js.map"
+    "main.5158577e.css.map": "/campervan-rent/static/css/main.5158577e.css.map",
+    "main.928b9963.js.map": "/campervan-rent/static/js/main.928b9963.js.map"
   },
   "entrypoints": [
-    "static/css/main.30f2fe4c.css",
-    "static/js/main.d4479a40.js"
+    "static/css/main.5158577e.css",
+    "static/js/main.928b9963.js"
   ]
 }
