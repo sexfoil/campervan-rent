@@ -39,8 +39,8 @@
   position: relative;
   width: 100%;
   height: 85vh;
-  border-top: 20px solid #f7f7f7;
-  border-bottom: 20px solid #f7f7f7;
+  border-top: 20px solid #ffffff;
+  border-bottom: 20px solid #ffffff;
   border-radius: 20px;
   margin: auto;
   display: flex;
@@ -48,9 +48,4 @@
   row-gap: 44px;
   overflow: auto;
   scrollbar-width: none;
-}
-
-.itemBody {
-  width: 90%;
-  border: 1px solid tomato;
 }

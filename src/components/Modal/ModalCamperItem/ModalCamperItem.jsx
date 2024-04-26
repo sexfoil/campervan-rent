@@ -28,8 +28,6 @@ export const ModalCamperItem = () => {
       }
     };
     const onEscapePress = evt => {
-      const code = evt.code;
-      console.log(code);
       if (evt.code === 'Escape') {
         onClickClose();
       }
