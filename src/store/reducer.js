@@ -1,6 +1,6 @@
 import storage from 'redux-persist/lib/storage';
-import { campervanReducer } from './slice';
 import persistReducer from 'redux-persist/es/persistReducer';
+import { campervanReducer } from './slice';
 
 const persistConfig = {
   key: 'favorites_ids',
