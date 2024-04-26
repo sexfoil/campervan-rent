@@ -1,8 +1,42 @@
-# React + Vite
+# CAMPERVAN RENT
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Test project GoIT course, developed by Viacheslav Poliakov
 
-Currently, two official plugins are available:
+## Demo link:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Access this site at [GH-Pages](https://sexfoil.github.io/campervan-rent/catalog)
+
+## Table of Content:
+
+- [About The App](#about-the-app)
+- [Technologies](#technologies)
+- [Setup](#setup)
+- [Credits](#credits)
+- [License](#license)
+
+## About The App
+
+"Campervan rent" is application to booking campers . There are Home page,
+Catalog, and Favorites pages with ability to search, filter, order, and like
+posts all of the campers we have.
+
+## Technologies
+
+I used `html`, `css`, `js`, `react`, `redux`, `axios`.
+
+## Setup
+
+- download or clone the repository
+- run `npm install`
+- run `npm start` to use it on your local env
+  `http://localhost:3000/campervan-rent`
+
+## Credits
+
+List of contriubutors:
+
+- Viacheslav Poliakov
+
+## License
+
+Developed by me 😎 @ [Viacheslav Poliakov](https://github.com/sexfoil)
