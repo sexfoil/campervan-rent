@@ -1,5 +1,5 @@
-import css from './Rating.module.css';
 import SvgIcon from 'components/SvgIcon/SvgIcon';
+import css from './Rating.module.css';
 
 const Raiting = ({ rating, reviews }) => {
   return (

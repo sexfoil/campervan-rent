@@ -1,9 +1,9 @@
 import SubmitButton from 'components/Button/SubmitButton';
-import css from './ModalCamperItemForm.module.css';
-import { NAMES } from 'properties/Constants';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateBooked } from 'store/slice';
 import { selectBooked } from 'store/selector';
+import { NAMES } from 'properties/Constants';
+import css from './ModalCamperItemForm.module.css';
 
 export const ModalCamperItemForm = ({ camper }) => {
   const dispatch = useDispatch();

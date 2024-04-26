@@ -1,8 +1,8 @@
-import { NAMES } from 'properties/Constants';
 import SvgIcon from 'components/SvgIcon/SvgIcon';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectLocationFilter } from 'store/selector';
 import { updateLocationFilter } from 'store/slice';
+import { NAMES } from 'properties/Constants';
 import css from './SearchLocation.module.css';
 
 const SearchLocation = () => {
