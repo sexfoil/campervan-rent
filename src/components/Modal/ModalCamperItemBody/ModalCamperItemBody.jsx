@@ -40,7 +40,7 @@ export const ModalCamperItemBody = ({ camper }) => {
                 <ModalReviewList reviews={camper.reviews} />
               )}
             </div>
-            <ModalCamperItemForm />
+            <ModalCamperItemForm camper={camper} />
           </div>
         </div>
       )}

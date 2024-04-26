@@ -19,8 +19,12 @@ const campervanSlice = createSlice({
     locationFilter: '',
     toolsFilter: [],
     activeTab: NAMES.TABS.features,
+    booked: [],
   },
   reducers: {
+    updateBooked: (state, { payload }) => {
+      state.booked = payload;
+    },
     updateActiveTab: (state, { payload }) => {
       state.activeTab = payload;
     },
@@ -72,4 +76,5 @@ export const {
   updateFavorites,
   updateCurrentCamper,
   updateActiveTab,
+  updateBooked,
 } = campervanSlice.actions;
